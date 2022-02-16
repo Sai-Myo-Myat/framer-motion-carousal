@@ -4,13 +4,14 @@
   padding: 5% 10%;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
 }
 
 .carousal {
+  width: 70%;
   height: 80%;
-  background-color: red;
-  cursor: grab;
+  cursor: pointer;
   overflow: hidden;
 }
 
@@ -18,7 +19,6 @@
   width: 50%;
   height: 100%;
   display: flex;
-  background-color: black;
   /* background-color: black; */
 }
 

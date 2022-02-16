@@ -8,18 +8,15 @@ function App() {
   const [width, setWidth] = useState(0);
   const carousal = useRef();
   useEffect(() => {
-    console.log("scrollWidth", carousal.current.scrollWidth);
-    console.log("offsetWidth", carousal.current.offsetWidth);
-    const scrollWidthNo = carousal.current.scrollWidth;
-    setWidth(scrollWidthNo);
-    console.log("width", width);
-    console.log("carousal", carousal.current);
+    setWidth(carousal.current.scrollWidth - carousal.current.offsetWidth);
   }, []);
 
   return (
     <div className="App">
+      <h1>carousal</h1>
       <motion.div ref={carousal} className="carousal">
         <motion.div
+          whileTap={{ cursor: "grab" }}
           drag="x"
           dragConstraints={{ right: 0, left: -width }}
           className="inner-carousal"
