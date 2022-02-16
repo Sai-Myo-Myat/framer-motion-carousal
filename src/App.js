@@ -8,9 +8,12 @@ function App() {
   const [width, setWidth] = useState(0);
   const carousal = useRef();
   useEffect(() => {
-    console.log(carousal.current.scrollWidth);
-    console.log(carousal.current.offsetLeft);
-    setWidth(carousal.current.scrollWidth - carousal.current.offsetWidth);
+    console.log("scrollWidth", carousal.current.scrollWidth);
+    console.log("offsetWidth", carousal.current.offsetWidth);
+    const scrollWidthNo = carousal.current.scrollWidth;
+    setWidth(scrollWidthNo);
+    console.log("width", width);
+    console.log("carousal", carousal.current);
   }, []);
 
   return (
